@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Tetrisish </title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+<script type="text/javascript">
+window.addEventListener('load', function() {
+    setTimeout(scrollTo, 0, 0, 1);
+}, false);
+</script>
+
+<script type="text/javascript" src="jquery-1.4.1.min.js"></script>
+<script type="text/javascript" src="sha-1.js"></script>
+<script type="text/javascript" src="tetris.js"></script>
+<script type="application/javascript" src="jquery.touchToClick.js"></script>
+<script type="application/javascript" src="fastclick.js"></script>
+<script type="application/javascript">
+	window.addEventListener('load', function() {
+		new FastClick(document.body);
+		Array.prototype.forEach.call(document.getElementsByClassName('button'), function(button) {
+			button.addEventListener('click', function(event) {
+				console.log(event.target.nodeName + ' was tapped (forwarded: ' + (event.forwardedTouchEvent ? 'yes' : 'no') + ')');
+			}, false);
+		});
+	}, false);
+</script>
+<link rel="stylesheet" type="text/css" href="tetris.css" />
+
+</head>
+<body>
+
+<!-- --------- Board -------- -->
+<div id="title">
+	<img src="img/title.png" id="gameTitle"  />
+</div>
+<div id="board">
+
+	<img src="img/gameBackground2.png" id="gameBackground"  />
+	
+	<!-- --------- Board Windows -------- -->
+	
+	<div id="gameOver" class="gameWindow"><h2>[Game Over]</h2>
+	
+	</div>
+	
+	<div id="start" class="gameWindow"><h2>Waiting Player</h2>
+		
+	
+	</div>
+
+	<div id="win" class="gameWindow"><h2>[You Win!]</h2>
+	
+	
+	</div>
+	<div id="lose" class="gameWindow"><h2>[You Lose!]</h2>
+	
+	
+	</div>
+	<div id="linesent">
+		<span id="line"></span><br />
+		
+	</div>
+	
+
+	
+	
+	
+</div>
+
+<div id="board2">
+
+	<img src="img/gameBackground2.png" id="gameBackground2"  />
+	
+	<!-- --------- Board Windows -------- -->
+	
+	<div id="gameOver2" class="gameWindow"><h2>[Game Over]</h2>
+		
+	</div>
+	<div id="start2" class="gameWindow"><h2>Waiting Player</h2>
+		
+	
+	</div>
+	<div id="win2" class="gameWindow"><h2>[You Win!]</h2>
+	
+	
+	</div>
+	<div id="lose2" class="gameWindow"><h2>[You Lose!]</h2>
+	
+	
+	</div>
+	<div id="linesent2">
+		<span id="line2"></span><br />
+		
+	</div>
+	
+
+	
+	
+	
+	
+</div>
+	
+<!-- --------- Loading -------- -->
+<div id="loading">
+	<h1>..Loading..</h1>
+	<img src="img/loading.gif" />
+	
+</div>
+	
+
+</body>
+</html>
